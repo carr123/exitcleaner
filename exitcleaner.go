@@ -27,7 +27,7 @@ func NewExitCleaner() *ExitCleaner {
 
 func (t *ExitCleaner) AddCleaner(nPrio int, f func()) {
 	if _, ok := t.cleaners[nPrio]; ok {
-		panic(fmt.Sprintf("priority %s already exist", nPrio))
+		panic(fmt.Sprintf("priority %d already exist", nPrio))
 	}
 
 	t.cleaners[nPrio] = f
